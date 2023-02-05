@@ -1,0 +1,103 @@
+.App {
+width:100%;
+ background:#3c9ae8;
+ height:150vh;
+}
+button {
+  border: 2px solid #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+button:hover {
+  background:#b347ed;
+  color:yellow;
+}
+.card-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+margin:5px;
+grid-gap:4px;
+border-radius:4px 4px
+}
+.card{
+  position:relative;
+  cursor:pointer;
+
+}
+.card img{
+  margin-left:10%;
+width:70%;
+height:150px;
+}
+
+.card .front{
+transform:rotateY(90deg);
+position:absolute;
+transition:all ease-in 0.2s;
+}
+.flipped .front{
+  transition-delay:0.3s;
+  transform:rotateY(0deg);
+}
+.card .back{
+  transition:all  ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+.flipped .back{
+  transform:rotateY(90deg);
+  transition-delay: 0s;
+}
+
+
+
+.gameOver{
+  width:100%;
+  height:150vh; 
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-contet:center;
+  color:white;
+  background:grey;
+}
+.btn-restart{
+  color:green;
+  font-size:25px;
+  border-radius:40px 40px;
+}
+.cardPair{
+  margin-top:5px;
+  margin-bottom:9px;
+  background:orange;
+  width:300px;
+  height:150px;
+  border-radius:10px 10px;
+text-align:center;
+}
+.cardPair h2{
+  color:purple;
+}
+.btn{
+  margin-left:6px;
+  width:25%;
+}
+.cardPair input{
+  width:50%;
+  font-size:26px;
+  border:none;
+  color:purple;
+}
+
+@media only screen and (max-width: 350px) {
+  .card{
+    width:10px;
+  }
+  .cardPair{
+   width:100px;
+  
+  }
+}

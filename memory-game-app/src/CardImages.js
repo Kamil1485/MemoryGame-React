@@ -1,0 +1,28 @@
+const cardImages = [
+  { src: "/img/a.png", name: "a", matched: false, category: "oyun" },
+  { src: "/img/b.png", name: "b", matched: false, category: "oyun" },
+  { src: "/img/c.png", name: "c", matched: false, category: "oyun" },
+  { src: "/img/d.png", name: "d", matched: false, category: "oyun" },
+  { src: "/img/e.png", name: "e", matched: false, category: "oyun" },
+  { src: "/img/giysi1.png", name: "giysi1", matched: false, category: "giysi" },
+  { src: "/img/giysi2.png", name: "giysi2", matched: false, category: "giysi" },
+  { src: "/img/giysi3.png", name: "giysi3", matched: false, category: "giysi" },
+  { src: "/img/giysi4.png", name: "giysi4", matched: false, category: "giysi" },
+  { src: "/img/j.png", name: "j", matched: false, category: "oyun" },
+  { src: "/img/g.png", name: "g", matched: false, category: "oyun" },
+  { src: "/img/h.png", name: "h", matched: false, category: "oyun" },
+  { src: "/img/giysi5.png", name: "giysi5", matched: false, category: "giysi" },
+  { src: "/img/giysi6.png", name: "giysi6", matched: false, category: "giysi" },
+  { src: "/img/giysi7.png", name: "giysi7", matched: false, category: "giysi" },
+  { src: "/img/giysi8.png", name: "giysi8", matched: false, category: "giysi" },
+  { src: "/img/giysi9.png", name: "giysi9", matched: false, category: "giysi" },
+  { src: "/img/giysi10.png", name: "giysi10", matched: false, category: "giysi" },
+  { src: "/img/a1.png", name: "a1", matched: false, category: "oyun" },
+  { src: "/img/b1.png", name: "b1", matched: false, category: "oyun" },
+  { src: "/img/x.png", name: "t", matched: false, category: "oyun" },
+  { src: "/img/w.png", name: "w", matched: false, category: "oyun" },
+  { src: "/img/oyun1.png", name: "oyun1", matched: false, category: "oyun" },
+  { src: "/img/oyun2.png", name: "oyun2", matched: false, category: "oyun" },
+];
+export default cardImages;
+// cardImages:Card Bilglerini tutan değişken.
