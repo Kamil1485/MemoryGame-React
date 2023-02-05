@@ -95,7 +95,6 @@ else{
         });
         resetTurn();
       } else {
-        setGameCount(0);
         //17-
         setTimeout(() => {
           resetTurn(); //13
