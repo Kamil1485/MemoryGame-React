@@ -15,14 +15,22 @@ function App() {
   const [gameCount, setGameCount] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [selectedOption, setSelectedOption] = useState("oyun"); //Başlangıçta ilk seçeneğin değerini içermeli
-console.log(selectedOption)
+  const [pair,setPair]=useState(0);
+  console.log(selectedOption)
 
+  useEffect(() => {
+    if (pair === parseInt(cardPair) && pair !== 0) {
+      setGameCount(0);
+      setPair(0);
+      setGameOver(true);
+      }
+       
+  }, [gameCount,pair, cardPair]);
 
-  console.log(cards);
   const shuffleCards = (katergori) => {
 
-    const shuffledCards4 = [...cardImages].filter((card)=>card.category===katergori)
-    console.log(shuffledCards4)
+    const shuffledCards3 = [...cardImages].filter((card)=>card.category===katergori)
+    console.log(shuffledCards3)
     //? 2-Sort ile her bir kartın yerini rasgele degistir,map ile yeni bir obje döndür,tüm cartları ve id özelliği içeren bir objeyi.
     if(katergori ){
     const shuffledCards2 = [...cardImages].filter((card)=>card.category===katergori).sort(() => Math.random() - 0.5);
@@ -50,7 +58,6 @@ console.log(selectedOption)
   const handleChoice = (card) => {
     //9
     //11 Eğer ilk secim boş deger ise, secilen cardı ilk secime ata dolu oldugunda ise ikinciye ata
-
     //23- Hızlıca 2 defa aynı carda tıklanınca otomatik eşini buluyor engellemek için her cartın id si farklıydı id ye göre kıyaslıyacagız choceOne ve ChoiceTwo
     if (card.id === choiceOne?.id) {
       return;
@@ -73,13 +80,11 @@ else{
     if (choiceOne && choiceTwo) {
       //2 secimde yapıldıysa karşılaştırmaya başla
       //19-
-      setGameCount(gameCount+1);
-
+      setGameCount((prev)=>prev+1);
       setDisabled(true);
 
       if (choiceOne.name === choiceTwo.name) {
-        
-
+        setPair((prev)=>prev+1);
         setCards((prevCards) => {
           
           return prevCards.map((cardItem) => {
@@ -102,15 +107,9 @@ else{
         }, 1000);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [choiceOne, choiceTwo]);
-  useEffect(() => {
-    console.log(gameCount)
-    console.log(gameCount)
-
-    if (gameCount == cardPair && gameCount!==0) {
-      setGameOver(true);
-    }
-  },);
+console.log(pair)
 
   console.log(cards);
   const resetTurn = () => {
@@ -122,8 +121,6 @@ else{
     //resetTurn her iki card arası eşleşme işlemi sonrası veya eşleşme olmadıysa hemen cagrılıyordu.
     setDisabled(false);
   };
-  console.log(choiceOne);
-  console.log(choiceTwo);
     //21-Sayfa Yüklenir Yüklenmez shuffle fonksiyonu çalışmalı yani oyun başlamalı.
  
  
@@ -131,8 +128,8 @@ else{
   const restartGame=()=>{
     setGameOver(false);
     setGameCount(0);
+    setPair(0);
     shuffleCards();
-    console.log("Restartlandı");
     }
 
     const handleChange = (event) => {
