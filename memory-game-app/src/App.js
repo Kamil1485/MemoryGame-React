@@ -16,8 +16,6 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [selectedOption, setSelectedOption] = useState("oyun"); //Başlangıçta ilk seçeneğin değerini içermeli
   const [pair,setPair]=useState(0);
-  console.log(selectedOption)
-
   useEffect(() => {
     if (pair === parseInt(cardPair) && pair !== 0) {
       setGameCount(0);
@@ -30,7 +28,6 @@ function App() {
   const shuffleCards = (katergori) => {
 
     const shuffledCards3 = [...cardImages].filter((card)=>card.category===katergori)
-    console.log(shuffledCards3)
     //? 2-Sort ile her bir kartın yerini rasgele degistir,map ile yeni bir obje döndür,tüm cartları ve id özelliği içeren bir objeyi.
     if(katergori ){
     const shuffledCards2 = [...cardImages].filter((card)=>card.category===katergori).sort(() => Math.random() - 0.5);
@@ -53,7 +50,7 @@ function App() {
     setCards(randomshuffledCards);
     setTurns(0);
   };
-  console.log(cards);
+
   }
   const handleChoice = (card) => {
     //9
@@ -108,9 +105,8 @@ else{
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [choiceOne, choiceTwo]);
-console.log(pair)
 
-  console.log(cards);
+
   const resetTurn = () => {
     //13- Karşılaştırma Sonrası stateler boşaltılmalı,yeni karşılaştırma yapabilmek için.
     setChoiceOne(null);
@@ -144,14 +140,11 @@ console.log(pair)
     }
     
   
-    console.log(gameOver)
-    
+
     const handleInput=(e)=>{
       setCardPair(e.target.value);
     }
-    console.log(gameOver)
-    console.log(gameCount)
-    console.log(cardPair)
+   
   return (
     <div className="App">
       
