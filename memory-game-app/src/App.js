@@ -26,8 +26,6 @@ function App() {
   }, [gameCount,pair, cardPair]);
 
   const shuffleCards = (katergori) => {
-
-    const shuffledCards3 = [...cardImages].filter((card)=>card.category===katergori)
     //? 2-Sort ile her bir kartın yerini rasgele degistir,map ile yeni bir obje döndür,tüm cartları ve id özelliği içeren bir objeyi.
     if(katergori ){
     const shuffledCards2 = [...cardImages].filter((card)=>card.category===katergori).sort(() => Math.random() - 0.5);
